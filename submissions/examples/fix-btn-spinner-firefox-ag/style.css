@@ -1,0 +1,43 @@
+/* EaseMotion CSS – Button Spinner Firefox Fix. Fixes: #32722 */
+@keyframes ease-btn-spin { to { transform: rotate(360deg); } }
+.ease-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 8px;
+  border: 1px solid #ced4da;
+  background-color: #f8f9fa;
+  color: #212529;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+  isolation: isolate;
+  transform: translateZ(0);
+}
+.ease-btn:hover:not(:disabled) { background-color: #e9ecef; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+.ease-btn:disabled { cursor: not-allowed; opacity: 0.7; }
+.ease-btn--primary { background-color: #4361ee; border-color: #4361ee; color: #fff; }
+.ease-btn--primary:hover:not(:disabled) { background-color: #3651d4; }
+.ease-btn--loading { padding-left: 2.4rem; pointer-events: none; }
+.ease-btn--loading::before {
+  content: "";
+  position: absolute;
+  left: 0.75rem;
+  width: 1em;
+  height: 1em;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: ease-btn-spin 0.7s linear infinite;
+  will-change: transform;
+}
+body { font-family: system-ui, sans-serif; padding: 2rem; background: #f0f2f5; }
+h2 { font-size: 1.1rem; margin-bottom: 1.5rem; }
+.demo-row { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.note { font-size: 0.85rem; color: #6c757d; }

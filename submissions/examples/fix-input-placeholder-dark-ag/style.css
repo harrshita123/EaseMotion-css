@@ -1,0 +1,30 @@
+/* EaseMotion CSS – Input Placeholder Dark Mode Fix. Fixes: #32716 */
+.ease-input {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  padding: 0.6rem 0.875rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: #212529;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+.ease-input::placeholder { color: #6c757d; opacity: 1; }
+.ease-input:focus { border-color: #4361ee; box-shadow: 0 0 0 3px rgba(67,97,238,0.2); }
+@media (prefers-color-scheme: dark) {
+  .ease-input { background-color: #1e1e2e; border-color: #444466; color: #e0e0f0; }
+  .ease-input::placeholder { color: #9090b0; opacity: 1; }
+  .ease-input:focus { border-color: #7b8cde; box-shadow: 0 0 0 3px rgba(123,140,222,0.25); }
+}
+.dark .ease-input { background-color: #1e1e2e; border-color: #444466; color: #e0e0f0; }
+.dark .ease-input::placeholder { color: #9090b0; opacity: 1; }
+.dark .ease-input:focus { border-color: #7b8cde; box-shadow: 0 0 0 3px rgba(123,140,222,0.25); }
+body { font-family: system-ui, sans-serif; padding: 2rem; background: #f0f2f5; color: #212529; }
+.demo-section { background: #fff; border-radius: 10px; padding: 1.5rem; max-width: 450px; margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; }
+.demo-section.dark { background: #1e1e2e; color: #e0e0f0; }
+.demo-section h2 { margin: 0 0 0.5rem; font-size: 1rem; }
