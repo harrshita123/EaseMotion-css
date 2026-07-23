@@ -1,87 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkbox Dark Mode Support - EaseMotion CSS</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark Mode Support - EaseMotion CSS</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+        color-scheme: light dark;
+    }
+    body {
+        font-family: system-ui, -apple-system, sans-serif;
+        padding: 2rem;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.5;
+        background-color: #f9fafb;
+        color: #111827;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    .demo-container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-top: 2rem;
+        padding: 2.5rem;
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .instructions {
+        background: #eff6ff;
+        padding: 1.5rem;
+        border-left: 4px solid #3b82f6;
+        border-radius: 0 8px 8px 0;
+        color: #1e3a8a;
+        margin-bottom: 2rem;
+    }
+
+    @media (prefers-color-scheme: dark) {
         body {
-            font-family: system-ui, -apple-system, sans-serif;
-            background: #f3f4f6;
-            color: #111827;
-            padding: 3rem;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 2rem;
-            max-width: 680px;
-            margin: 0 auto;
-            transition: background-color 0.2s ease, color 0.2s ease;
+            background-color: #020617;
+            color: #f1f5f9;
         }
-        h1 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin: 0;
+        .demo-container {
+            background: #0f172a;
+            border-color: #1e293b;
         }
-        .notice {
-            background: #eff6ff;
-            border-left: 4px solid #3b82f6;
-            color: #1e40af;
-            padding: 1rem 1.25rem;
-            border-radius: 6px;
-            width: 100%;
-            box-sizing: border-box;
-            font-size: 0.875rem;
-            line-height: 1.6;
+        .instructions {
+            background: #1e293b;
+            color: #93c5fd;
+            border-left-color: #60a5fa;
         }
-        .notice code {
-            background: #dbeafe;
-            padding: 0.1rem 0.3rem;
-            border-radius: 3px;
-            font-size: 0.8rem;
-        }
-        @media (prefers-color-scheme: dark) {
-            body {
-                background: #0f172a;
-                color: #f1f5f9;
-            }
-            .notice {
-                background: #1e3a5f;
-                border-left-color: #60a5fa;
-                color: #bfdbfe;
-            }
-            .notice code {
-                background: #1e40af;
-                color: #bfdbfe;
-            }
-        }
-    </style>
+    }
+  </style>
 </head>
 <body>
-    <h1>Checkbox: Dark Mode Support</h1>
+  <main>
+    <h1>ease-checkbox Dark Mode Demo</h1>
 
-    <div class="notice">
-        <strong>How to test:</strong> Enable dark mode in your OS settings
-        (<code>System Preferences</code> on macOS, <code>Settings</code> on Windows)
-        or emulate <code>prefers-color-scheme: dark</code> in your browser DevTools
-        under the Rendering tab. The component will adapt its colors automatically.
+    <div class="instructions">
+        <p><strong>Testing instructions:</strong></p>
+        <ol>
+            <li>Open your operating system or browser settings.</li>
+            <li>Toggle your system theme from Light to <strong>Dark</strong>.</li>
+            <li>Observe how the component automatically switches to a deep, low-strain color palette seamlessly!</li>
+        </ol>
     </div>
 
-    <div class="ease-checkbox" tabindex="0">
-        <div class="ease-checkbox-title">
-            Checkbox Component
-        </div>
-        <div class="ease-checkbox-body">
-            This component automatically adapts its background, text, border,
-            and shadow colors when the user has dark mode enabled in their
-            operating system or browser preferences. No JavaScript required.
-        </div>
-        <div class="ease-checkbox-footer">
-            <span class="ease-checkbox-badge">Dark Mode Ready</span>
-            <span>Automatic theme switching</span>
-        </div>
+    <div class="demo-container">
+      <h2>Accessible Component</h2>
+
+      <div class="ease-checkbox">
+        <h3>Responsive Theming</h3>
+        <p>This layout adapts automatically to your OS dark mode preference to reduce eye strain in low-light environments.</p>
+      </div>
     </div>
+  </main>
 </body>
 </html>
